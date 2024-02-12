@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+  
+<body>
+  <main>
+    <center><button class="titulo" data-text="Awesome">
+        <span class="actual-text">&nbsp;Suavicesto&nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;Suavicesto&nbsp;</span>
+    </button></center>
+    <p class="description">Pulsa algun botón para entrar al contenido como 
+      <code class="code">Sección 1 </code> <code
+        class="code">Sección 2</code>
+    </p>
+
+    <section class="grid">
+      <a href="Materiales.html" class='card' style="cursor: url(https://cdn.custom-cursor.com/db/4827/32/arrow2747.png)   , pointer !important">
+        <h2>Sección 1 &rarr;</h2>
+        <p>Materiales</p>
+      </a>
+
+      <a href="Pasos.html" class='card' style="cursor: url(https://cdn.custom-cursor.com/db/4827/32/arrow2747.png), pointer !important" onmousedown="return false;" onselectstart="return false;">
+
+        <h2>Sección 2 &rarr;</h2>
+        <p>
+       Pasos
+        </p>
+      </a>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+
+<script>const http = require('http');
+const fs = require('fs');
+
+
+
+const server = http.createServer((req, res) => {
+  fs.readFile('index.html', (err, data) => {
+    if (err) {
+      res.writeHead(500);
+      return res.end('Error cargando el archivo index.html');
+    }
+
+    res.writeHead(200);
+    res.end(data);
+  });
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Servidor en funcionamiento en el puerto ${PORT}`);
+});fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+</script>
+</body>
+
+</html>
